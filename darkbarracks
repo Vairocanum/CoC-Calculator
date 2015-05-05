@@ -1,0 +1,265 @@
+import java.awt.GridLayout;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class darkbarracks {
+
+	public static void main(String[] args) {
+		
+		 int mlvl1 = 6;
+		 int mlvl2 = 7;
+		 int mlvl3 = 8;		//Predefine variables minion cost
+		 int mlvl4 = 9;
+		 int mlvl5 = 10;
+		 int mlvl6 = 11;
+		 int mans = 0;		//Minion Answer Variable
+		
+		 int hrlvl1 = 40;
+		 int hrlvl2 = 45;
+		 int hrlvl3 = 52;	//Predefine variables hog rider cost
+		 int hrlvl4 = 58;
+		 int hrlvl5 = 65;	
+		 int hrans = 0;		//Hog Rider Answer Variable
+	 	
+		 int vlvl1 = 70;
+		 int vlvl2 = 100;	//Predefine variables valkyrie
+		 int vlvl3 = 130;
+		 int vlvl4 = 160;	
+		 int vans = 0;		//Valkyrie Answer Variable
+		
+		 int golvl1 = 450;
+		 int golvl2 = 525;	//Predefine variables golem cost
+		 int golvl3 = 600;
+		 int golvl4 = 675;
+		 int golvl5 = 750;
+		 int goans = 0;		//Golem Answer Variable
+	 	
+		 int wilvl1 = 250;	//Predefine variables witch cost
+		 int wilvl2 = 350;
+		 int wians = 0;		//Witch Answer Variable
+		
+		 int lhlvl1 = 390;	//Predefine variables lava hound cost
+		 int lhlvl2 = 450;
+		 int lhlvl3 = 510;
+		 int lhans = 0;		//Lava Hound Answer Variable
+		
+		
+		JTextField mlevel = new JTextField(1);		//Minions
+	    JTextField mamount = new JTextField(3);
+	    mlevel.setText("0");						//Default Value 0
+	    mamount.setText("0");
+	    	     
+	    JTextField hrlevel = new JTextField(1);		//Hog Riders
+	    JTextField hramount = new JTextField(3);
+	    hrlevel.setText("0");
+	    hramount.setText("0");
+	      
+	    JTextField vlevel = new JTextField(1);		//Valkyries
+	    JTextField vamount = new JTextField(3);
+	    vlevel.setText("0");
+	    vamount.setText("0");
+	      
+	    JTextField golevel = new JTextField(1);		//Golems
+	    JTextField goamount = new JTextField(3);
+	    golevel.setText("0");
+	    goamount.setText("0");
+	      
+	    JTextField wilevel = new JTextField(1);		//Witches
+	    JTextField wiamount = new JTextField(3);
+	    wilevel.setText("0");
+	    wiamount.setText("0");
+	      
+	    JTextField lhlevel = new JTextField(1);		//Lava Hounds
+	    JTextField lhamount = new JTextField(3);
+	    lhlevel.setText("0");
+	    lhamount.setText("0");
+		
+	    JPanel dbPanel = new JPanel();
+	    GridLayout dbLayout = new GridLayout(6,2);
+	    dbPanel.setLayout(dbLayout);
+	      
+		
+	      
+	      dbPanel.add(new JLabel("Minions Level (1-6): "));	//Minions value input
+	      dbPanel.add(mlevel);
+	      mlevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount: "));
+	      dbPanel.add(mamount);
+	      mamount.setHorizontalAlignment(JTextField.CENTER);
+	            
+	      dbPanel.add(new JLabel("Hog Riders Level (1-5):"));		//Hog Riders value input
+	      dbPanel.add(hrlevel);
+	      hrlevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount:"));
+	      dbPanel.add(hramount);
+	      hramount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      dbPanel.add(new JLabel("Valkyries Level (1-4):"));		//Valkyries value input
+	      dbPanel.add(vlevel);
+	      vlevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount:"));
+	      dbPanel.add(vamount);
+	      vamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      dbPanel.add(new JLabel("Golems Level (1-5):"));		//Golems value input
+	      dbPanel.add(golevel);
+	      golevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount:"));
+	      dbPanel.add(goamount);
+	      goamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      dbPanel.add(new JLabel("Witches Level (1-2):"));		//Witches value input
+	      dbPanel.add(wilevel);
+	      wilevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount:"));
+	      dbPanel.add(wiamount);
+	      wiamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      dbPanel.add(new JLabel("Lava Hounds Level (1-3): "));	//Lava Hounds value input
+	      dbPanel.add(lhlevel);
+	      lhlevel.setHorizontalAlignment(JTextField.CENTER);
+	      dbPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      dbPanel.add(new JLabel("Amount: "));
+	      dbPanel.add(lhamount);
+	      lhamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      
+	      JOptionPane.showMessageDialog(null, "All values have a default value 0." +
+	      									  "\nJust leave them there, if you don't use them.");	
+
+	      	int result3 = JOptionPane.showConfirmDialog(null, dbPanel, 
+	      				"Please Enter Unit Level and Amount", JOptionPane.OK_CANCEL_OPTION);
+	      	if (result3 == JOptionPane.CANCEL_OPTION) return;
+	      	if (result3 == JOptionPane.OK_OPTION) {
+	      		
+	      	  int mlevelI = Integer.parseInt(mlevel.getText());
+	       	  int mamountI = Integer.parseInt(mamount.getText());
+	       	  
+	       	    if (mlevelI == 1){
+	   				mans = mlvl1 * mamountI;
+	   			}
+	   			if (mlevelI == 2){
+	   				mans = mlvl2 * mamountI;
+	   			}
+	   			if (mlevelI == 3){
+	   				mans = mlvl3 * mamountI;
+	   			}
+	   			if (mlevelI == 4){
+	   				mans = mlvl4 * mamountI;
+	   			}
+	   			if (mlevelI == 5){
+	   				mans = mlvl5 * mamountI;
+	   			}
+	   			if (mlevelI == 6){
+	   				mans = mlvl6 * mamountI;
+	   			}
+	   			
+	   			
+	   			int hrlevelI = Integer.parseInt(hrlevel.getText());
+	   	    	int hramountI = Integer.parseInt(hramount.getText());
+	   			
+	   			if (hrlevelI == 1){
+	   				hrans = hrlvl1 * hramountI;
+	   			}
+	   			if (hrlevelI == 2){
+	   				hrans = hrlvl2 * hramountI;
+	   			}
+	   			if (hrlevelI == 3){
+	   				hrans = hrlvl3 * hramountI;
+	   			}
+	   			if (hrlevelI == 4){
+	   				hrans = hrlvl4 * hramountI;
+	   			}
+	   			if (hrlevelI == 5){
+	   				hrans = hrlvl5 * hramountI;
+	   			}
+	   			
+	   			
+	   			int vlevelI = Integer.parseInt(vlevel.getText());
+	   			int vamountI = Integer.parseInt(vamount.getText());
+	   			
+	   			if (vlevelI == 1){
+	   				vans = vlvl1 * vamountI;
+	   			}
+	   			if (vlevelI == 2){
+	   				vans = vlvl2 * vamountI;
+	   			}
+	   			if (vlevelI == 3){
+	   				vans = vlvl3 * vamountI;
+	   			}
+	   			if (vlevelI == 4){
+	   				vans = vlvl4 * vamountI;
+	   			}
+	   			
+	   			
+	   			int golevelI = Integer.parseInt(golevel.getText());
+	   			int goamountI = Integer.parseInt(goamount.getText());
+	   			
+	   			if (golevelI == 1){
+	   				goans = golvl1 * goamountI;
+	   			}
+	   			if (golevelI == 2){
+	   				goans = golvl2 * goamountI;
+	   			}
+	   			if (golevelI == 3){
+	   				goans = golvl3 * goamountI;
+	   			}
+	   			if (golevelI == 4){
+	   				goans = golvl4 * goamountI;
+	   			}
+	   			if (golevelI == 5){
+	   				goans = golvl5 * goamountI;
+	   			}
+	   			
+	   			
+	   			int wilevelI = Integer.parseInt(wilevel.getText());
+	   			int wiamountI = Integer.parseInt(wiamount.getText());
+	   			
+	   			if (wilevelI == 1){
+	   				wians = wilvl1 * wiamountI;
+	   			}
+	   			if (wilevelI == 2){
+	   				wians = wilvl2 * mamountI;
+	   			}
+	   			
+	   			
+	   			int lhlevelI = Integer.parseInt(lhlevel.getText());
+	   			int lhamountI = Integer.parseInt(lhamount.getText());
+	   			
+	   			if (lhlevelI == 1){
+	   				lhans = lhlvl1 * lhamountI;
+	   			}
+	   			if (lhlevelI == 2){
+	   				lhans = lhlvl2 * lhamountI;
+	   			}
+	   			if (lhlevelI == 3){
+	   				lhans = lhlvl3 * lhamountI;
+	   			}
+	   			
+	   			
+	   	int total = 0;
+	    total = mans + hrans + vans + goans + wians + lhans;
+	   		
+	    JOptionPane.showMessageDialog(null, "Minions: " + mans + " Dark Elixir." +
+	   										"\nHog Riders: " + hrans + " Dark Elixir." +
+	   										"\nValkyries: " + vans + " Dark Elixir." +
+	   										"\nGolems:" + goans + " Dark Elixir." + 
+	   										"\nWitches: " + wians + " Dark Elixir." + 
+	   										"\nLava Hounds:" + lhans + " Dark Elixir." + 
+	   										"\nTotal: " + total + " Dark Elixir.");
+	      		
+	      		
+	      	}
+	}
+
+}
