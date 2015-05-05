@@ -1,5 +1,11 @@
 import java.awt.GridLayout;
 
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import javax.swing.*;
 
 public class gridcalcbarracks {
