@@ -1,0 +1,466 @@
+import java.awt.GridLayout;
+
+import javax.swing.*;
+
+public class gridcalcbarracks {
+   public static void main(String[] args) {
+	   
+	    int blvl1 = 25;
+		int blvl2 = 40;
+		int blvl3 = 60;
+		int blvl4 = 80;					//Predefine variables barbarian cost
+		int blvl5 = 100;
+		int blvl6 = 150;
+		int blvl7 = 200;
+		int bans  = 0;					//Barbarian Answer variable
+		
+		int alvl1 = 50;
+		int alvl2 = 80;
+		int alvl3 = 120;
+		int alvl4 = 160;				//Predefine variables archer cost
+		int alvl5 = 200;
+		int alvl6 = 300;
+		int alvl7 = 400;
+		int aans  = 0;					//Archer Answer variable
+		
+		int glvl1 = 25;
+		int glvl2 = 40;
+		int glvl3 = 60;
+		int glvl4 = 80;					//Predefine variables goblin cost
+		int glvl5 = 100;
+		int glvl6 = 150;
+		int gans  = 0;					//Goblin Answer variable
+		
+		int gilvl1 = 250;
+		int gilvl2 = 750;
+		int gilvl3 = 1250;
+		int gilvl4 = 1750;				//Predefine variables giant cost
+		int gilvl5 = 2250;
+		int gilvl6 = 3000;
+		int gilvl7 = 3500;
+		int gians  = 0;					//Giant Answer variable
+		
+		int wblvl1 = 500;
+		int wblvl2 = 1000;
+		int wblvl3 = 1500;
+		int wblvl4 = 2000;				//Predefine variables wall breaker cost
+		int wblvl5 = 2500;
+		int wblvl6 = 3000;
+		int wbans  = 0;					//WallBreaker Answer variable
+		
+		int balvl1 = 2000;
+		int balvl2 = 2500;
+		int balvl3 = 3000;
+		int balvl4 = 3500;				//Predefine variables balloon cost
+		int balvl5 = 4000;
+		int balvl6 = 4500;
+		int baans  = 0;					//Balloon Answer variable
+		
+		int wlvl1 = 1500;
+		int wlvl2 = 2000;
+		int wlvl3 = 2500;
+		int wlvl4 = 3000;				//Predefine variables wizard cost
+		int wlvl5 = 3500;
+		int wlvl6 = 4000;
+		int wans  = 0;					//Wizard Answer variable
+		
+		int hlvl1 = 5000;
+		int hlvl2 = 6000;				//Predefine variables Healer cost
+		int hlvl3 = 8000;
+		int hlvl4 = 10000;					
+		int hans  = 0;					//Healer Answer variable
+		
+		int dlvl1 = 25000;
+		int dlvl2 = 30000;				//Predefine variables dragon cost
+		int dlvl3 = 36000;
+		int dlvl4 = 42000;					
+		int dans  = 0;					//Dragon Answer variable
+		
+		int plvl1 = 30000;
+		int plvl2 = 35000;				//Predefine variables P.E.K.K.A. cost
+		int plvl3 = 40000;
+		int plvl4 = 45000;
+		int plvl5 = 50000;
+		int pans  = 0;					//P.E.K.K.A. Answer variable
+	   
+	   
+      JTextField blevel = new JTextField(1);		//Barbarians
+      JTextField bamount = new JTextField(3);
+      blevel.setText("0");						//Default Value 0
+	  bamount.setText("0");
+      
+      JTextField alevel = new JTextField(1);		//Archers
+      JTextField aamount = new JTextField(3);
+      alevel.setText("0");						//Default Value 0
+	  aamount.setText("0");
+	  
+      JTextField glevel = new JTextField(1);		//Goblins
+      JTextField gamount = new JTextField(3);
+      glevel.setText("0");						//Default Value 0
+	  gamount.setText("0");
+	  
+      JTextField gilevel = new JTextField(1);		//Giants
+      JTextField giamount = new JTextField(3);
+      gilevel.setText("0");						//Default Value 0
+	  giamount.setText("0");
+	  
+      JTextField wblevel = new JTextField(1);		//Wall Breakers
+      JTextField wbamount = new JTextField(3);
+      wblevel.setText("0");						//Default Value 0
+	  wbamount.setText("0");
+	  
+      JTextField balevel = new JTextField(1);		//Balloons
+      JTextField baamount = new JTextField(3);
+      balevel.setText("0");						//Default Value 0
+	  baamount.setText("0");
+	  
+      JTextField wlevel = new JTextField(1);		//Wizards
+      JTextField wamount = new JTextField(3);
+      wlevel.setText("0");						//Default Value 0
+	  wamount.setText("0");
+	  
+      JTextField hlevel = new JTextField(1);		//Healers
+      JTextField hamount = new JTextField(3);
+      hlevel.setText("0");						//Default Value 0
+	  hamount.setText("0");
+	  
+      JTextField dlevel = new JTextField(1);		//Dragons
+      JTextField damount = new JTextField(3);
+      dlevel.setText("0");						//Default Value 0
+	  damount.setText("0");
+	  
+      JTextField plevel = new JTextField(1);		//P.E.K.K.A.
+      JTextField pamount = new JTextField(3);
+      plevel.setText("0");						//Default Value 0
+	  pamount.setText("0");
+
+      JPanel barracksPanel = new JPanel();
+      GridLayout barrackslayout = new GridLayout(10,2);
+      barracksPanel.setLayout(barrackslayout);
+      
+      
+      barracksPanel.add(new JLabel("Barbarians Level (1-7): "));	//Barbarians value input
+      barracksPanel.add(blevel);
+      blevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount: "));
+      barracksPanel.add(bamount);
+      bamount.setHorizontalAlignment(JTextField.CENTER);
+            
+      barracksPanel.add(new JLabel("Archers Level (1-7):"));		//Archers value input
+      barracksPanel.add(alevel);
+      alevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(aamount);
+      aamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Goblins Level (1-6):"));		//Goblins value input
+      barracksPanel.add(glevel);
+      glevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(gamount);
+      gamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Giants Level (1-7):"));		//Giants value input
+      barracksPanel.add(gilevel);
+      gilevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(giamount);
+      giamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Wall Breakers Level (1-6):"));		//Wall Breaker value input
+      barracksPanel.add(wblevel);
+      wblevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(wbamount);
+      wbamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Ballons Level (1-6): "));	//Balloons value input
+      barracksPanel.add(balevel);
+      balevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount: "));
+      barracksPanel.add(baamount);
+      baamount.setHorizontalAlignment(JTextField.CENTER);
+            
+      barracksPanel.add(new JLabel("Wizards Level (1-6):"));		//Wizards value input
+      barracksPanel.add(wlevel);
+      wlevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(wamount);
+      wamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Healers Level (1-4):"));		//Healers value input
+      barracksPanel.add(hlevel);
+      hlevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(hamount);
+      hamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("Dragons Level (1-4):"));		//Dragons value input
+      barracksPanel.add(dlevel);
+      dlevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(damount);
+      damount.setHorizontalAlignment(JTextField.CENTER);
+      
+      barracksPanel.add(new JLabel("P.E.K.K.A. Level (1-5):"));		//P.E.K.K.A. value input
+      barracksPanel.add(plevel);
+      plevel.setHorizontalAlignment(JTextField.CENTER);
+      barracksPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      barracksPanel.add(new JLabel("Amount:"));
+      barracksPanel.add(pamount);
+      pamount.setHorizontalAlignment(JTextField.CENTER);
+      
+      JOptionPane.showMessageDialog(null, "All values have a default value 0." +
+				  "\nJust leave them there, if you don't use them.");	
+
+      int result = JOptionPane.showConfirmDialog(null, barracksPanel, 
+              "Please Enter Unit Level and Amount", JOptionPane.OK_CANCEL_OPTION);
+      if (result == JOptionPane.CANCEL_OPTION) return;
+      if (result == JOptionPane.OK_OPTION) {
+         
+    	      	  
+    	  int blevelI = Integer.parseInt(blevel.getText());
+    	  int bamountI = Integer.parseInt(bamount.getText());
+    	  
+    	  if (blevelI == 1){
+				bans = blvl1 * bamountI;
+			}
+			if (blevelI == 2){
+				bans = blvl2 * bamountI;
+			}
+			if (blevelI == 3){
+				bans = blvl3 * bamountI;
+			}
+			if (blevelI == 4){
+				bans = blvl4 * bamountI;
+			}
+			if (blevelI == 5){
+				bans = blvl5 * bamountI;
+			}
+			if (blevelI == 6){
+				bans = blvl6 * bamountI;
+			}
+			if (blevelI == 7){
+				bans = blvl7 * bamountI;
+			}
+			
+			int alevelI = Integer.parseInt(alevel.getText());
+	    	int aamountI = Integer.parseInt(aamount.getText());
+			
+			if (alevelI == 1){
+				aans = alvl1 * aamountI;
+			}
+			if (alevelI == 2){
+				aans = alvl2 * aamountI;
+			}
+			if (alevelI == 3){
+				aans = alvl3 * aamountI;
+			}
+			if (alevelI == 4){
+				aans = alvl4 * aamountI;
+			}
+			if (alevelI == 5){
+				aans = alvl5 * aamountI;
+			}
+			if (alevelI == 6){
+				aans = alvl6 * aamountI;
+			}
+			if (alevelI == 7){
+				aans = alvl7 * aamountI;
+			}
+			
+			int glevelI = Integer.parseInt(glevel.getText());
+			int gamountI = Integer.parseInt(gamount.getText());
+			
+			if (glevelI == 1){
+				gans = glvl1 * gamountI;
+			}
+			if (glevelI == 2){
+				gans = glvl2 * gamountI;
+			}
+			if (glevelI == 3){
+				gans = glvl3 * gamountI;
+			}
+			if (glevelI == 4){
+				gans = glvl4 * gamountI;
+			}
+			if (glevelI == 5){
+				gans = glvl5 * gamountI;
+			}
+			if (glevelI == 6){
+				gans = glvl6 * gamountI;
+			}
+			
+			int gilevelI = Integer.parseInt(gilevel.getText());
+			int giamountI = Integer.parseInt(giamount.getText());
+			
+			if (gilevelI == 1){
+				gians = gilvl1 * giamountI;
+			}
+			if (gilevelI == 2){
+				gians = gilvl2 * giamountI;
+			}
+			if (gilevelI == 3){
+				gians = gilvl3 * giamountI;
+			}
+			if (gilevelI == 4){
+				gians = gilvl4 * giamountI;
+			}
+			if (gilevelI == 5){
+				gians = gilvl5 * giamountI;
+			}
+			if (gilevelI == 6){
+				gians = gilvl6 * giamountI;
+			}
+			if (gilevelI == 7){
+				gians = gilvl7 * giamountI;
+			}
+			
+			int wblevelI = Integer.parseInt(wblevel.getText());
+			int wbamountI = Integer.parseInt(wbamount.getText());
+			
+			if (wblevelI == 1){
+				wbans = wblvl1 * wbamountI;
+			}
+			if (wblevelI == 2){
+				wbans = wblvl2 * wbamountI;
+			}
+			if (wblevelI == 3){
+				wbans = wblvl3 * wbamountI;
+			}
+			if (wblevelI == 4){
+				wbans = wblvl4 * wbamountI;
+			}
+			if (wblevelI == 5){
+				wbans = wblvl5 * wbamountI;
+			}
+			if (wblevelI == 6){
+				wbans = wblvl6 * wbamountI;
+			}
+			
+			int balevelI = Integer.parseInt(balevel.getText());
+			int baamountI = Integer.parseInt(baamount.getText());
+			
+			if (balevelI == 1){
+				baans = balvl1 * baamountI;
+			}
+			if (balevelI == 2){
+				baans = balvl2 * baamountI;
+			}
+			if (balevelI == 3){
+				baans = balvl3 * baamountI;
+			}
+			if (balevelI == 4){
+				baans = balvl4 * baamountI;
+			}
+			if (balevelI == 5){
+				baans = balvl5 * baamountI;
+			}
+			if (balevelI == 6){
+				baans = balvl6 * baamountI;
+			}
+			
+			int wlevelI = Integer.parseInt(wlevel.getText());
+			int wamountI = Integer.parseInt(wamount.getText());
+			
+			if (wlevelI == 1){
+				wans = wlvl1 * wamountI;
+			}
+			if (wlevelI == 2){
+				wans = wlvl2 * wamountI;
+			}
+			if (wlevelI == 3){
+				wans = wlvl3 * wamountI;
+			}
+			if (wlevelI == 4){
+				wans = wlvl4 * wamountI;
+			}
+			if (wlevelI == 5){
+				wans = wlvl5 * wamountI;
+			}
+			if (wlevelI == 6){
+				wans = wlvl6 * wamountI;
+			}
+			
+			int hlevelI = Integer.parseInt(hlevel.getText());
+			int hamountI = Integer.parseInt(hamount.getText());
+			
+			if (hlevelI == 1){
+				hans = hlvl1 * hamountI;
+			}
+			if (hlevelI == 2){
+				hans = hlvl2 * hamountI;
+			}
+			if (hlevelI == 3){
+				hans = hlvl3 * hamountI;
+			}
+			if (hlevelI == 4){
+				hans = hlvl4 * hamountI;
+			}
+			
+			int dlevelI = Integer.parseInt(dlevel.getText());
+			int damountI = Integer.parseInt(damount.getText());
+			
+			if (dlevelI == 1){
+				dans = dlvl1 * damountI;
+			}
+			if (dlevelI == 2){
+				dans = dlvl2 * damountI;
+			}
+			if (dlevelI == 3){
+				dans = dlvl3 * damountI;
+			}
+			if (dlevelI == 4){
+				dans = dlvl4 * damountI;
+			}
+			
+			int plevelI = Integer.parseInt(plevel.getText());
+			int pamountI = Integer.parseInt(pamount.getText());
+			
+			if (plevelI == 1){
+				pans = plvl1 * pamountI;
+			}
+			if (plevelI == 2){
+				pans = plvl2 * pamountI;
+			}
+			if (plevelI == 3){
+				pans = plvl3 * pamountI;
+			}
+			if (plevelI == 4){
+				pans = plvl4 * pamountI;
+			}
+			if (plevelI == 5){
+				pans = plvl5 * pamountI;
+			}
+			
+    	  
+      }
+
+      int total = 0;
+      total = bans + aans + gans + gians + wbans + baans + wans + hans + dans + pans;
+		
+		JOptionPane.showMessageDialog(null, "Barbarians: " + bans + " Elixir." +
+											"\nArchers: " + aans + " Elixir." +
+											"\nGoblins: " + gans + " Elixir." +
+											"\nGiants:" + gians + " Elixir." + 
+											"\nWall Breakers: " + wbans + " Elixir." + 
+											"\nBalloons:" + baans + " Elixir." + 
+											"\nWizards: " + wans + " Elixir." + 
+											"\nHealers: " + hans + " Elixir." + 
+											"\nDragons: " + dans + " Elixir." + 
+											"\nP.E.K.K.A. " + pans + " Elixir." +
+											"\nTotal: " + total + " Elixir.");
+      
+      	
+      
+   }
+}
