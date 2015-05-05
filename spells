@@ -1,0 +1,244 @@
+import java.awt.GridLayout;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class spells {
+	public static void main(String[] args) {
+		
+		int lslvl1 = 15000;
+		int lslvl2 = 16500;
+		int lslvl3 = 18000;		//Lightning Spell Cost
+		int lslvl4 = 20000;
+		int lslvl5 = 22000;
+		int lslvl6 = 24000;
+		int lsans = 0;			//Lightning Answer Variable
+		
+		int hslvl1 = 15000;
+		int hslvl2 = 16500;
+		int hslvl3 = 18000;		//Heal Spell Cost
+		int hslvl4 = 20000;
+		int hslvl5 = 22000;
+		int hslvl6 = 24000;
+		int hsans = 0;			//Heal Answer Variable
+		
+		int rslvl1 = 23000;
+		int rslvl2 = 25000;
+		int rslvl3 = 27000;		//Rage Spell Cost
+		int rslvl4 = 30000;
+		int rslvl5 = 33000;
+		int rsans = 0;			//Rage Answer Variable
+		
+		int jslvl1 = 23000;
+		int jslvl2 = 27000;		//Jump Spell Cost
+		int jslvl3 = 31000;
+		int jsans = 0;			//Jump Answer
+		
+		int fslvl1 = 26000;
+		int fslvl2 = 29000;
+		int fslvl3 = 31000;		//Freeze Spell Cost
+		int fslvl4 = 33000;
+		int fslvl5 = 35000;
+		int fsans = 0;			//Freeze Answer
+		
+		
+		  JTextField lslevel = new JTextField(1);		//Lightning
+	      JTextField lsamount = new JTextField(3);
+	      lslevel.setText("0");
+	      lsamount.setText("0");
+	      
+	      JTextField hslevel = new JTextField(1);		//Heal
+	      JTextField hsamount = new JTextField(3);
+	      hslevel.setText("0");
+	      hsamount.setText("0");
+	      
+	      JTextField rslevel = new JTextField(1);		//Rage
+	      JTextField rsamount = new JTextField(3);
+	      rslevel.setText("0");
+	      rsamount.setText("0");
+	      
+	      JTextField jslevel = new JTextField(1);		//Jump
+	      JTextField jsamount = new JTextField(3);
+	      jslevel.setText("0");
+	      jsamount.setText("0");
+	      
+	      JTextField fslevel = new JTextField(1);		//Freeze
+	      JTextField fsamount = new JTextField(3);
+	      fslevel.setText("0");
+	      fsamount.setText("0");
+		
+	      JPanel spellsPanel = new JPanel();
+	      GridLayout spellsLayout = new GridLayout(5,2);
+	      spellsPanel.setLayout(spellsLayout);
+	      
+
+	      spellsPanel.add(new JLabel("Lightning Spell Level (1-6): "));	//Lightning value input
+	      spellsPanel.add(lslevel);
+	      lslevel.setHorizontalAlignment(JTextField.CENTER);
+	      spellsPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      spellsPanel.add(new JLabel("Amount: "));
+	      spellsPanel.add(lsamount);
+	      lsamount.setHorizontalAlignment(JTextField.CENTER);
+	            
+	      spellsPanel.add(new JLabel("Heal Spell Level (1-6):"));		//Heal value input
+	      spellsPanel.add(hslevel);
+	      hslevel.setHorizontalAlignment(JTextField.CENTER);
+	      spellsPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      spellsPanel.add(new JLabel("Amount:"));
+	      spellsPanel.add(hsamount);
+	      hsamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      spellsPanel.add(new JLabel("Rage Spell Level (1-5):"));		//Rage value input
+	      spellsPanel.add(rslevel);
+	      rslevel.setHorizontalAlignment(JTextField.CENTER);
+	      spellsPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      spellsPanel.add(new JLabel("Amount:"));
+	      spellsPanel.add(rsamount);
+	      rsamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      spellsPanel.add(new JLabel("Jump Spell Level (1-3):"));		//Jump value input
+	      spellsPanel.add(jslevel);
+	      jslevel.setHorizontalAlignment(JTextField.CENTER);
+	      spellsPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      spellsPanel.add(new JLabel("Amount:"));
+	      spellsPanel.add(jsamount);
+	      jsamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      spellsPanel.add(new JLabel("Freeze Spell Level (1-5):"));		//Freeze value input
+	      spellsPanel.add(fslevel);
+	      fslevel.setHorizontalAlignment(JTextField.CENTER);
+	      spellsPanel.add(Box.createHorizontalStrut(15)); // a spacer
+	      spellsPanel.add(new JLabel("Amount:"));
+	      spellsPanel.add(fsamount);
+	      fsamount.setHorizontalAlignment(JTextField.CENTER);
+	      
+	      
+	      JOptionPane.showMessageDialog(null, "All values have a default value 0." +
+					  "\nJust leave them there, if you don't use them.");	
+
+			int result2 = JOptionPane.showConfirmDialog(null, spellsPanel, 
+			"Please enter spell level and amount", JOptionPane.OK_CANCEL_OPTION);
+			if (result2 == JOptionPane.CANCEL_OPTION) return;
+			if (result2 == JOptionPane.OK_OPTION) {
+			
+			
+			int lslevelI = Integer.parseInt(lslevel.getText());
+			int lsamountI = Integer.parseInt(lsamount.getText());
+			
+			if (lslevelI == 1){
+			lsans = lslvl1 * lsamountI;
+			}
+			if (lslevelI == 2){
+			lsans = lslvl2 * lsamountI;
+			}
+			if (lslevelI == 3){
+			lsans = lslvl3 * lsamountI;
+			}
+			if (lslevelI == 4){
+			lsans = lslvl4 * lsamountI;
+			}
+			if (lslevelI == 5){
+			lsans = lslvl5 * lsamountI;
+			}
+			if (lslevelI == 6){
+			lsans = lslvl6 * lsamountI;
+			}
+			
+			
+			int hslevelI = Integer.parseInt(hslevel.getText());
+			int hsamountI = Integer.parseInt(hsamount.getText());
+			
+			if (hslevelI == 1){
+			hsans = hslvl1 * hsamountI;
+			}
+			if (hslevelI == 2){
+			hsans = hslvl2 * hsamountI;
+			}
+			if (hslevelI == 3){
+			hsans = hslvl3 * hsamountI;
+			}
+			if (hslevelI == 4){
+			hsans = hslvl4 * hsamountI;
+			}
+			if (hslevelI == 5){
+			hsans = hslvl5 * hsamountI;
+			}
+			if (hslevelI == 6){
+			hsans = hslvl6 * hsamountI;
+			}
+			
+			
+			int rslevelI = Integer.parseInt(rslevel.getText());
+			int rsamountI = Integer.parseInt(rsamount.getText());
+			
+			if (rslevelI == 1){
+			rsans = rslvl1 * rsamountI;
+			}
+			if (rslevelI == 2){
+			rsans = rslvl2 * rsamountI;
+			}
+			if (rslevelI == 3){
+			rsans = rslvl3 * rsamountI;
+			}
+			if (rslevelI == 4){
+			rsans = rslvl4 * rsamountI;
+			}
+			if (rslevelI == 5){
+			rsans = rslvl5 * rsamountI;
+			}
+			
+			
+			int jslevelI = Integer.parseInt(jslevel.getText());
+			int jsamountI = Integer.parseInt(jsamount.getText());
+			
+			if (jslevelI == 1){
+			jsans = jslvl1 * jsamountI;
+			}
+			if (jslevelI == 2){
+			jsans = jslvl2 * jsamountI;
+			}
+			if (jslevelI == 3){
+			jsans = jslvl3 * jsamountI;
+			}
+			
+			
+			int fslevelI = Integer.parseInt(fslevel.getText());
+			int fsamountI = Integer.parseInt(fsamount.getText());
+			
+			if (fslevelI == 1){
+			fsans = fslvl1 * fsamountI;
+			}
+			if (fslevelI == 2){
+			fsans = fslvl2 * fsamountI;
+			}
+			if (fslevelI == 3){
+			fsans = fslvl3 * fsamountI;
+			}
+			if (fslevelI == 4){
+			fsans = fslvl4 * fsamountI;
+			}
+			if (fslevelI == 5){
+			fsans = fslvl5 * fsamountI;
+			}
+			
+		}
+			
+			
+		int total = 0;
+		total = lsans + hsans + rsans + jsans + fsans;
+		
+		JOptionPane.showMessageDialog(null, "Lightning: " + lsans + " Elixir." +
+											"\nHeal: " + hsans + " Elixir." +
+											"\nRage: " + rsans + " Elixir." +
+											"\nJump:" + jsans + " Elixir." + 
+											"\nFreeze: " + fsans + " Elixir." +
+											"\nTotal: " + total + " Elixir.");
+			
+	      
+	}
+
+}
