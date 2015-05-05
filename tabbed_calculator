@@ -1,0 +1,91 @@
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
+
+public class tabbed_calculator {
+
+	public static void main(String[] args) {
+				
+		//Create Dialog and set it up
+		final JFrame main = new JFrame();
+		main.setLocation(200, 200);
+		main.setSize(1000,700);
+		main.setTitle("Test n Stuff");
+		main.setVisible(true);
+		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
+		//Create JTabbedPane
+		JTabbedPane tabs = new JTabbedPane(JTabbedPane.TOP);
+				
+		/*Create JPanels*/
+		
+		//Barracks Panel
+		JPanel barracksPanel = new JPanel();
+	    GridLayout barracksLayout = new GridLayout(10,2);
+	    barracksPanel.setLayout(barracksLayout);
+		
+	    //Dark Barracks Panel
+	    JPanel dbPanel = new JPanel();
+	    GridLayout dbLayout = new GridLayout(6,2);
+	    dbPanel.setLayout(dbLayout);
+	    
+	    //Spells Panel
+	    JPanel spellsPanel = new JPanel();
+	    GridLayout spellsLayout = new GridLayout(5,2);
+	    spellsPanel.setLayout(spellsLayout);
+	    
+	    //Finalize Panel
+	    JPanel finalPanel = new JPanel();
+	    
+	    /*End of JPanel Creation*/
+	    
+	    //Create JButtons
+	    JButton ok = new JButton("Calculate");
+	    JButton cancel = new JButton("Cancel");
+	    
+	    /*OK Button calls Calculator Method*/
+	    ok.addActionListener(new ActionListener() {
+	    	
+	    	public void actionPerformed(ActionEvent c) {
+	    	//Calculator Method
+	    	}
+	    }					);
+	    
+	    /*Cancel Button Disposes JFrame*/
+	    cancel.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	            CloseFrame();
+	        }
+	        //Close Method
+			private void CloseFrame() {main.dispose();}
+	    }						);
+
+		//Color for test
+		barracksPanel.setBackground(Color.yellow);
+		dbPanel.setBackground(Color.gray);
+		spellsPanel.setBackground(Color.blue);
+		finalPanel.setBackground(Color.green);
+				
+		//Add JPanels to JTabbedPane
+		tabs.addTab("Vanilla Units", barracksPanel);
+		tabs.addTab("Dark Units", dbPanel);
+		tabs.addTab("Spells", spellsPanel);
+		tabs.addTab("Finalize", finalPanel);
+		
+		//Add JButtons
+		finalPanel.add(ok);
+		finalPanel.add(cancel);
+		
+		
+		//Add JTabbedPane to JFrame
+		main.add(tabs);	
+		
+	}
+
+}
